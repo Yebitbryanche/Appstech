@@ -4,15 +4,18 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import { images } from "../../Types/images";
 import NavCard from "../../Components/navCard/NavCard";
 import { NavCardData } from "../../Components/navCard/NavCard";
+interface Props{
+  className?:string
+}
 
 
-function NavLinks() {
+function NavLinks({className}:Props) {
   const [toggleChevron1, setToggleChevron1] = useState(true)
   const [toggleChevron, setToggleChevron] = useState(true)
   return (
-    <>
-      <div className="flex justify-between z-40">
-        <div>
+    <div className={className}>
+      <div className="flex justify-between">
+        <div className="w-[150px]">
           <img src={images.logo} alt="Logo" />
         </div>
         <ul className="flex items-center gap-10">
@@ -24,8 +27,8 @@ function NavLinks() {
               <p>Products</p>
             { toggleChevron1?<FaChevronDown/> :<FaChevronUp/>}
             {!toggleChevron1 && 
-            <div className="absolute w-full top-0 left-0 bg-secondary">
-              <NavCard items={NavCardData}/>
+            <div className="absolute w-full top-20 left-0 bg-white flex justify-center shadow-xl">
+              <NavCard items={NavCardData} className="animate-slide_down"/>
             </div>}
           </li>
 
@@ -42,7 +45,7 @@ function NavLinks() {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   )
 }
 

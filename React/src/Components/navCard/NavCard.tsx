@@ -17,47 +17,47 @@ interface CardItems{
 
 export const NavCardData = [
     {
-        title:"cloud solution",
+        title:"Cloud solution",
         description:"AppsTech Labs is a solution center created to showcase",
         path:"/cloud_solutions",
-        icon:<IoIosCloudOutline />
+        icon:<IoIosCloudOutline size={30} />
     },
      {
         title:"Mobile Security",
         description:"AppsTech Labs is a solution center created to showcase",
         path:"/mobile_security",
-        icon:<GoShieldCheck/>
+        icon:<GoShieldCheck size={30}/>
     },
     {
         title:"Mobile solution",
         description:"AppsTech Labs is a solution center created to showcase",
         path:"/mobile_solution",
-        icon:<FaMobileScreenButton />
+        icon:<FaMobileScreenButton size={30}/>
     },
     {
         title:"Oracle E business suit",
         description:"AppsTech Labs is a solution center created to showcase",
         path:"/oracle_e_bsns",
-        icon:<FaCartShopping />
+        icon:<FaCartShopping size={30}/>
     },
     {
         title:"Linux Virtualization",
         description:"AppsTech Labs is a solution center created to showcase",
         path:"/linux",
-        icon:<FaTv/>
+        icon:<FaTv size={30}/>
     }
 ]
 
 function NavCard({items}:CardProps) {
   return (
-    <div>
+    <div className='grid grid-cols-3 gap-10 py-5 px-6'>
       {
         items.map((item) =>(
-            <Link to={item.path}>
-                <img src={item.icon} alt={item.title}/>
+            <Link to={item.path} className='p-3 max-w-[350px] rounded-xl shadow-lg inset-shadow-xs flex items-center gap-x-4'>
+                <div className='text-primary'>{item.icon}</div>
                 <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
+                    <h3 className='font-medium text-xl'>{item.title}</h3>
+                    <p className='text-accent'>{item.description}</p>
                 </div>
             </Link>
         ))
