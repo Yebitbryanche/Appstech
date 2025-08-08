@@ -9,7 +9,7 @@ interface HeaderProps {
 
 const HeaderTitle: React.FC<HeaderProps> = ({ firstTitle, secondTitle2, subtitle, logo }) => {
   return (
-    <div className="flex gap-280 absolute bottom-45 p-5 flex">
+    <div className="flex gap-230 absolute bottom-45 px-30 flex">
       <div>
         <h1 className="text-3xl font-medium text-white">{firstTitle}</h1>
         <h1 className="text-3xl font-small text-white">{secondTitle2}</h1>
