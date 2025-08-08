@@ -145,7 +145,7 @@ const Home: React.FC = () => {
       </div>
 
       {/*global support*/}
-      <div className="flex items-center justify-center gap-30 py-20">
+      <div className="flex items-center justify-center gap-30 py-30">
         <div>
           <Subtitle
             className="text-primary text-4xl font-medium w-80"

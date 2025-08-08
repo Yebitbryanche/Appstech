@@ -1,4 +1,5 @@
 import logo from "../assets/images/Logo.png"
+<<<<<<< HEAD
 import logo1 from "../assets/images/logo1.png"
 import members from "../assets/images/members.png"
 import workers from "../assets/images/workers.png"
@@ -32,4 +33,11 @@ export const images ={
     cloud_solution,
     MTN_Logo,
     cloud,
+=======
+import map from "../assets/images/Screenshot 2025-08-08 104747.png"
+
+export const images ={
+    logo,
+    map
+>>>>>>> 409308e804246c3e54106db0888e0b3cba7d5743
 }
