@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { OracleData } from "../../data/oracleData";
 import { ShieldCheckIcon, ServerIcon, LockClosedIcon } from "@heroicons/react/24/outline";
 
@@ -30,8 +31,9 @@ const OracleDatabase = () => {
                             : LockClosedIcon;
 
                     return (
-                        <div
+                        <Link
                             key={item.title}
+                            to={item.link}
                             className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition duration-300"
                         >
                             {/* Image */}
@@ -56,7 +58,7 @@ const OracleDatabase = () => {
                                     {item.description}
                                 </p>
                             </div>
-                        </div>
+                        </Link>
                     );
                 })}
             </div>
