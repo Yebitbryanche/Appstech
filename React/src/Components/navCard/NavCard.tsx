@@ -52,9 +52,9 @@ export const NavCardData = [
         icon:<FaTv size={30}/>
     },
     {
-        title:"Oracle Business Suit",
+        title:"Oracle Database",
         description:"AppsTech Labs is a solution center created to showcase",
-        path:"/oracle_suit",
+        path:"/oracle_database",
         icon:<BsFillSuitcaseLgFill size={30} />
     }
 ]
