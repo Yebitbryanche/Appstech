@@ -11,6 +11,7 @@ import Footer from "./Containers/Footer";
 import About from "./Pages/about";
 import News from "./Pages/news";
 import Comunity from "./Pages/community/Comunity";
+import OracleDatabase from "./Pages/OracleDatabase";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/mobile_security" element={<MobileSecurity />} />
         <Route path="/mobile_solution" element={<MobileSolution />} />
         <Route path="/oracle_e_bsns" element={<OracleEbusiness />} />
+        <Route path="/oracle_database" element={<OracleDatabase/>} />
         <Route path="/linux" element={<Linux />} />
         <Route path="/about" element={<About/>}/>
         <Route path="/news" element={<News/>}/>
