@@ -1,10 +1,11 @@
 import React from 'react'
 
-function Internship() {
+function News() {
   return (
     <div>
+      <p>News</p>
     </div>
   )
 }
 
-export default Internship
+export default News

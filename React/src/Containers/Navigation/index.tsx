@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
-import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
+import { FaChevronDown, FaChevronRight, FaChevronUp } from "react-icons/fa6";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { MdOutlineMenu } from "react-icons/md";
 import { images } from "../../Types/images";
-import NavCard from "../../Components/navCard/NavCard";
+import NavCard, { expertiseCardData } from "../../Components/navCard/NavCard";
 import { NavCardData } from "../../Components/navCard/NavCard";
 interface Props{
   className?:string
@@ -32,14 +32,18 @@ function NavLinks({className}:Props) {
             <p>Products</p>
             { toggleChevron1?<FaChevronDown/> :<FaChevronUp/>}
             {!toggleChevron1 && 
-            <div className="md:absolute w-full top-20 left-0 bg-white flex justify-center shadow-xl">
-              <NavCard items={NavCardData} className="animate-slide_down"/>{/* cards for products  */}
+            <div className="md:absolute w-full top-12 left-0 bg-white flex justify-center shadow-xl">
+              <NavCard items={NavCardData} />{/* cards for products  */}
             </div>}
           </li>
 
           <li onClick={() => (setToggleChevron(!toggleChevron))} className="flex items-center gap-x-2 cursor-pointer">
               <p>Expertise</p>
             { toggleChevron?<FaChevronDown/> :<FaChevronUp/>}
+            {!toggleChevron && 
+            <div className="md:absolute w-full top-12 left-0 md:bg-white flex justify-center shadow-xl">
+              <NavCard items={expertiseCardData} />{/* cards for products  */}
+            </div>}
           </li>
         
           <li>
@@ -54,7 +58,7 @@ function NavLinks({className}:Props) {
           ?
           <MdOutlineMenu onClick={()=> setShowNav(true)} size={30} className="md:hidden"/>
           :
-          <div className="bg-white absolute w-[90%] top-2 right-2 rounded-2xl h-[50vh] shadow-xl inset-shadow-sm md:hidden">
+          <div className="bg-white absolute w-[90%] top-2 right-2 rounded-2xl h-[30vh] shadow-xl inset-shadow-sm md:hidden">
             <ul className="pt-[2rem] pl-10 block flex flex-col items-start gap-5  md:hidden ">
               <li>
                 <Link to="/">Home</Link>
@@ -62,17 +66,23 @@ function NavLinks({className}:Props) {
 
               <li onClick={() => (setToggleChevron1(!toggleChevron1))}  className="flex items-center gap-x-2 cursor-pointer">{/* Logic to  toggle Chevron icon */}
                 <p>Products</p>
-                { toggleChevron1?<FaChevronDown/> :<FaChevronUp/>}
+                { toggleChevron1?<FaChevronRight/> :<FaChevronUp/>}
                 {!toggleChevron1 && 
-                <div className="absolute bg-white w-[100%] top-0 right-0 rounded-xl right-2 shadow-xl inset-shadow-sm md:hidden z-40 flex justify-center">
+                <div className="absolute bg-white w-[100%] top-1 rounded-xl right-1 shadow-xl inset-shadow-sm md:hidden z-30 flex justify-center">
                   <NavCard items={NavCardData} className="animate-slide_down"/>{/* link cards for products & logic to close drop down tab  */}
                   <IoCloseCircleOutline size={30} className=" absolute top-1 right-1 text-secondary md:hidden "/>
                 </div>}
               </li>
 
-              <li onClick={() => (setToggleChevron(!toggleChevron))} className="flex items-center gap-x-2 cursor-pointer">
+              <li onClick={() => (setToggleChevron(!toggleChevron))} className="flex items-center gap-x-2 cursor-pointer ">
                   <p>Expertise</p>
-                { toggleChevron?<FaChevronDown/> :<FaChevronUp/>}
+                { toggleChevron?<FaChevronRight/> :<FaChevronUp/>}
+                {!toggleChevron &&
+                  <div className="absolute bg-white z-40 right-1 top-1 w-[100%] shadow-xl inset-shadow-sm flex justify-center md:hidden rounded-xl">
+                     <NavCard items={expertiseCardData}/>
+                     <IoCloseCircleOutline size={30} className=" absolute top-1 right-1 text-secondary md: z-40 "/>
+                  </div>
+                }
               </li>
             
               <li>

@@ -8,6 +8,9 @@ import MobileSolution from "./Pages/mobileSolution";
 import OracleEbusiness from "./Pages/OracleEbusiness";
 import Linux from "./Pages/Linux";
 import Footer from "./Containers/Footer";
+import About from "./Pages/about";
+import News from "./Pages/news";
+import Comunity from "./Pages/community/Comunity";
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
         <Route path="/mobile_solution" element={<MobileSolution />} />
         <Route path="/oracle_e_bsns" element={<OracleEbusiness />} />
         <Route path="/linux" element={<Linux />} />
+        <Route path="/about" element={<About/>}/>
+        <Route path="/news" element={<News/>}/>
+        <Route path="/comunity" element={<Comunity/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
